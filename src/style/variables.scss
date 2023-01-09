@@ -1,0 +1,29 @@
+$font-ubuntu: 'Ubuntu', sans-serif;
+$font-kaushan: 'Kaushan Script', cursive;
+
+$transition: .3s ease;
+
+$bg-color: #2F4F4F;
+
+$errorMsg-color: #DC143C;
+$errorMsg-bgcolor: #F8F8FF;
+
+$input-font-color: #fff;
+$placeholder-color: #fff;
+$submit-color: #00FA9A;
+
+@mixin myFlexDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin glassMorphism {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}

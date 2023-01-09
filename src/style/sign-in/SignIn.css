@@ -1,0 +1,133 @@
+.signin_form_section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signin_form_section::after {
+  content: "";
+  position: absolute;
+  left: 35%;
+  top: 25%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #FFD700, #8B008B);
+  z-index: -1;
+}
+.signin_form_section::before {
+  content: "";
+  position: absolute;
+  right: 35%;
+  bottom: 25%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #FF00FF, #FFD700);
+  z-index: -1;
+}
+.signin_form_section .signin_form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  gap: 0.5rem;
+  padding: 2rem;
+  width: 400px;
+}
+.signin_form_section .signin_form .inputs_div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.signin_form_section .signin_form .inputs_div .user_input {
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.3rem;
+  background-color: #2F4F4F;
+  color: #fff;
+}
+.signin_form_section .signin_form .inputs_div .user_input:valid {
+  border: 3px solid #00FA9A;
+}
+.signin_form_section .signin_form .inputs_div .user_input:not(:placeholder-shown):invalid {
+  border: 3px solid #DC143C;
+}
+.signin_form_section .signin_form .inputs_div .password_input_div {
+  position: relative;
+}
+.signin_form_section .signin_form .inputs_div .password_input_div .showhide_password_span {
+  position: absolute;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1rem;
+  top: calc(50% - 0.5rem);
+  right: 0.5rem;
+}
+.signin_form_section .signin_form .nothave_account_span {
+  cursor: pointer;
+  color: #fff;
+  font-family: "Kaushan Script", cursive;
+  transition: 0.3s ease;
+}
+.signin_form_section .signin_form .nothave_account_span:hover {
+  text-decoration: underline;
+  color: #00FA9A;
+  transition: 0.3s ease;
+}
+.signin_form_section .signin_form .signin_btn {
+  cursor: pointer;
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  background-color: #00FA9A;
+  text-transform: uppercase;
+  font-family: "Ubuntu", sans-serif;
+  transition: 0.3s ease;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+.signin_form_section .signin_form .signin_btn:hover {
+  letter-spacing: normal;
+  font-weight: normal;
+}
+.signin_form_section .signin_form .signin_btn:active {
+  box-shadow: inset 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  visibility: hidden;
+}
+
+/* ========== media queries (small devices) ========== */
+@media screen and (max-width: 1024px) {
+  .signin_form_section::after {
+    left: 25%;
+    top: 25%;
+  }
+  .signin_form_section::before {
+    right: 25%;
+    bottom: 25%;
+  }
+}
+/* ========== media queries (small devices) ========== */
+@media screen and (max-width: 600px) {
+  .signin_form_section::after {
+    left: 0%;
+  }
+  .signin_form_section::before {
+    right: 0%;
+  }
+  .signin_form_section .signin_form {
+    width: 90%;
+  }
+}/*# sourceMappingURL=SignIn.css.map */

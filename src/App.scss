@@ -1,0 +1,115 @@
+@import './style/variables.scss';
+@import './style/formInput/FormInput.scss';
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Ubuntu:ital@0;1&display=swap');
+
+
+.register_form_section {
+    height: 100vh;
+    @include myFlexDiv;
+    font-family: $font-ubuntu;
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 30%;
+        top: 10%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #FFD700, #8B008B);
+        z-index: -1;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        right: 30%;
+        bottom: 10%;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #FF00FF, #FFD700);
+        z-index: -1;
+    }
+
+    .register_form {
+        @include myFlexDiv;
+        @include glassMorphism;
+        gap: .7rem;
+        padding: 1rem;
+        height: 500px;
+        width: 400px;
+
+        h3 {
+            color: #fff;
+            font-family: $font-ubuntu;
+        }
+
+        .submit_btn {
+            position: relative;
+            cursor: pointer;
+            width: 150px;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            background-color: $submit-color;
+            text-transform: uppercase;
+            font-family: $font-ubuntu;
+            transition: $transition;
+            letter-spacing: .2rem;
+            font-weight: bold;
+
+            &:hover {
+                letter-spacing: normal;
+                font-weight: normal;
+            }
+
+            &:active {
+                box-shadow: inset 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+
+/* ========== media queries (small devices) ========== */
+@media screen and (max-width: 1024px) {
+    .register_form_section {
+
+        &::after {
+            left: 20%;
+            top: 5%;
+            width: 150px;
+            height: 150px;
+        }
+
+        &::before {
+            right: 20%;
+            bottom: 5%;
+            width: 150px;
+            height: 150px;
+        }
+    }
+}
+
+/* ========== media queries (small devices) ========== */
+@media screen and (max-width: 600px) {
+    .register_form_section {
+
+        &::after {
+            left: 0%;
+            top: 0%;
+        }
+
+        &::before {
+            right: 0%;
+            bottom: 0%;
+        }
+        .register_form {
+            width: 90%;
+        }
+    }
+
+}

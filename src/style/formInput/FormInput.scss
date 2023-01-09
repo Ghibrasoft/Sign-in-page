@@ -1,0 +1,46 @@
+@import '../variables.scss';
+
+::placeholder {
+    color: $placeholder-color;
+    font-size: medium;
+    font-family: $font-kaushan;
+}
+
+.input_div {
+    @include myFlexDiv;
+    width: 100%;
+
+    .form_input {
+        background-color: $bg-color;
+        color: $input-font-color;
+        font-family: $font-ubuntu;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        width: 100%;
+        padding: .3rem;
+        font-size: 1rem;
+
+        &:valid {
+            border: 3px solid $submit-color;
+        }
+
+        &:not(:placeholder-shown):invalid {
+            border: 3px solid $errorMsg-color;
+        }
+    }
+
+    .form_input:not(:focus):invalid~.error_message {
+        display: block;
+    }
+
+    .error_message {
+        color: $errorMsg-color;
+        background-color: $errorMsg-bgcolor;
+        font-family: $font-ubuntu;
+        padding: .1rem;
+        border-radius: 5px;
+        display: none;
+    }
+}
+

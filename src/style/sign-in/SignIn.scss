@@ -1,0 +1,147 @@
+@import '../variables.scss';
+
+.signin_form_section {
+    height: 100vh;
+    @include myFlexDiv;
+
+    &::after {
+        content: '';
+        position: absolute;
+        left: 35%;
+        top: 25%;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #FFD700, #8B008B);
+        z-index: -1;
+    }
+    &::before {
+        content: '';
+        position: absolute;
+        right: 35%;
+        bottom: 25%;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #FF00FF, #FFD700);
+        z-index: -1;
+    }
+
+    .signin_form {
+        @include myFlexDiv;
+        @include glassMorphism;
+        gap: .5rem;
+        padding: 2rem;
+        width: 400px;
+
+        .inputs_div {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+
+            .user_input {
+                border: none;
+                border-radius: 5px;
+                outline: none;
+                font-size: 1rem;
+                padding: .3rem;
+                background-color: $bg-color;
+                color: $input-font-color;
+
+                &:valid {
+                    border: 3px solid $submit-color;
+                }
+
+                &:not(:placeholder-shown):invalid {
+                    border: 3px solid $errorMsg-color;
+                }
+            }
+
+            .password_input_div {
+                position: relative;
+
+                .showhide_password_span {
+                    position: absolute;
+                    cursor: pointer;
+                    color: #fff;
+                    font-size: 1rem;
+                    top: calc(50% - .5rem);
+                    right: .5rem;
+                }
+            }
+        }
+
+        .nothave_account_span {
+            cursor: pointer;
+            color: #fff;
+            font-family: $font-kaushan;
+            transition: $transition;
+
+            &:hover {
+                text-decoration: underline;
+                color: $submit-color;
+                transition: $transition;
+            }
+        }
+
+        .signin_btn {
+            cursor: pointer;
+            width: 100%;
+            height: 40px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            background-color: $submit-color;
+            text-transform: uppercase;
+            font-family: $font-ubuntu;
+            transition: $transition;
+            letter-spacing: .2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+
+            &:hover {
+                letter-spacing: normal;
+                font-weight: normal;
+            }
+
+            &:active {
+                box-shadow: inset 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+                visibility: hidden;
+            }
+        }
+    }
+}
+
+/* ========== media queries (small devices) ========== */
+@media screen and (max-width: 1024px) {
+    .signin_form_section {
+
+        &::after {
+            left: 25%;
+            top: 25%;
+        }
+
+        &::before {
+            right: 25%;
+            bottom: 25%;
+        }
+    }
+}
+
+/* ========== media queries (small devices) ========== */
+@media screen and (max-width: 600px) {
+    .signin_form_section {
+
+        &::after {
+            left: 0%;
+        }
+
+        &::before {
+            right: 0%;
+        }
+
+        .signin_form {
+            width: 90%;
+        }
+    }
+}

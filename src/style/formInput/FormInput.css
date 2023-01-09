@@ -1,0 +1,41 @@
+::placeholder {
+  color: #fff;
+  font-size: medium;
+  font-family: "Kaushan Script", cursive;
+}
+
+.input_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.input_div .form_input {
+  background-color: #2F4F4F;
+  color: #fff;
+  font-family: "Ubuntu", sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 0.3rem;
+  font-size: 1rem;
+}
+.input_div .form_input:valid {
+  border: 3px solid #00FA9A;
+}
+.input_div .form_input:not(:placeholder-shown):invalid {
+  border: 3px solid #DC143C;
+}
+.input_div .form_input:not(:focus):invalid ~ .error_message {
+  display: block;
+}
+.input_div .error_message {
+  color: #DC143C;
+  background-color: #F8F8FF;
+  font-family: "Ubuntu", sans-serif;
+  padding: 0.1rem;
+  border-radius: 5px;
+  display: none;
+}/*# sourceMappingURL=FormInput.css.map */
